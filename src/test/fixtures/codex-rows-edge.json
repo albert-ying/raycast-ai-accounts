@@ -6,8 +6,22 @@
     "version": "0.159.0",
     "rateWindowLabels": { "primary": "5h", "secondary": "Weekly", "tertiary": "Fable" },
     "pace": {
-      "primary": { "stage": "onTrack", "willLastToReset": true, "summary": "On pace", "etaSeconds": 3600, "expectedUsedPercent": 0, "deltaPercent": 0 },
-      "secondary": { "stage": "farAhead", "willLastToReset": false, "summary": "Runs out\nsoon", "etaSeconds": 7200, "expectedUsedPercent": 50, "deltaPercent": 50 }
+      "primary": {
+        "stage": "onTrack",
+        "willLastToReset": true,
+        "summary": "On pace",
+        "etaSeconds": 3600,
+        "expectedUsedPercent": 0,
+        "deltaPercent": 0
+      },
+      "secondary": {
+        "stage": "farAhead",
+        "willLastToReset": false,
+        "summary": "Runs out\nsoon",
+        "etaSeconds": 7200,
+        "expectedUsedPercent": 50,
+        "deltaPercent": 50
+      }
     },
     "usage": {
       "accountEmail": "erin@example.com",
@@ -35,13 +49,22 @@
     "provider": "codex",
     "account": "dave@example.com — Team Space",
     "source": "oauth",
-    "error": { "code": 1, "message": "Codex auth.json needs refresh.\nReauthenticate this account.", "kind": "provider" }
+    "error": {
+      "code": 1,
+      "message": "Codex auth.json needs refresh.\nReauthenticate this account.",
+      "kind": "provider"
+    }
   },
   {
     "provider": "codex",
     "account": "gina@example.com",
     "source": "oauth",
-    "usage": { "accountEmail": "gina@example.com", "updatedAt": "2026-09-29T20:00:02Z", "primary": null, "secondary": null }
+    "usage": {
+      "accountEmail": "gina@example.com",
+      "updatedAt": "2026-09-29T20:00:02Z",
+      "primary": null,
+      "secondary": null
+    }
   },
   {
     "provider": "claude",

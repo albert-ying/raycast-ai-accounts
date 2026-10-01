@@ -218,6 +218,7 @@
     "dev": "ray develop",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test src/test/*.test.ts",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "publish": "npx @raycast/api@latest publish"
   }
 }

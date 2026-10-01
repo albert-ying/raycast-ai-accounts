@@ -447,7 +447,14 @@ test("a zombie child (terminated worker never reaped it) does not keep a lock al
     const old = Date.now() - 60_000;
     fs.writeFileSync(
       path.join(dir, "provider-claude.lock"),
-      JSON.stringify({ token: "dead", purpose: "refresh", ownerTag: "x", createdAt: old, heartbeatAt: old, childPid: process.pid }),
+      JSON.stringify({
+        token: "dead",
+        purpose: "refresh",
+        ownerTag: "x",
+        createdAt: old,
+        heartbeatAt: old,
+        childPid: process.pid,
+      }),
     );
     setProcessStateReader(() => "Z");
     const lock = await acquireLock(dir, "provider-claude", { purpose: "switch", waitMs: 0 });
@@ -456,7 +463,14 @@ test("a zombie child (terminated worker never reaped it) does not keep a lock al
     // Same lock, but the child is really running: it keeps the lock.
     fs.writeFileSync(
       path.join(dir, "provider-claude.lock"),
-      JSON.stringify({ token: "live", purpose: "refresh", ownerTag: "x", createdAt: old, heartbeatAt: old, childPid: process.pid }),
+      JSON.stringify({
+        token: "live",
+        purpose: "refresh",
+        ownerTag: "x",
+        createdAt: old,
+        heartbeatAt: old,
+        childPid: process.pid,
+      }),
     );
     setProcessStateReader(() => "S");
     const blocked = await acquireLock(dir, "provider-claude", { purpose: "switch", waitMs: 0 });
